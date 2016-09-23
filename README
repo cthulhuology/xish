@@ -1,0 +1,34 @@
+xish
+====
+
+xish is a UNIX shell that is being developed for xilli linux.
+
+The core concept behind xish, is that your shell is just a 
+state machine that remembers environment variables, executes
+processes, and manages pipes between them.  Given the highly
+networked world we live in, xish will also treat sockets as
+first class citizens, have built in support for SSL/TLS, as
+well as pipes, named-pipes, files, and the usual stdin, stdout,
+stderr trifecta.
+
+Unlike nearly all of the shells in existence, xish will not 
+have builtin commands.  Instead, xish will provide a socket
+interface and messaging protocol by which external programs 
+can use to modify the current xish state.  Access to this 
+socket will require that all messages be cryptographically
+signed.  Binaries executed by xish may also require signing
+as well, to make it easier to secure remote access to system
+resources.
+
+xish roadmap
+------------
+
+* base command interpreter
+* evented messaging and socket interface
+* off the shelf crypto integration
+* suite for minimal sh/bash compatability
+* map & reduce pipe operators
+* binary signing and command verification
+
+Copyright (C) 2016 David J. Goehrig <dave at dloh.org>
+
